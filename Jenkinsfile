@@ -27,7 +27,7 @@ pipeline {
         }
         stage('docker deploy'){
             steps{
-                sh 'docker container rm -f greetingapp'
+                sh 'docker container rm -f user'
                 sh 'docker run --name user -itd -p 9090:9090 user:${BUILD_NUMBER}'
                 echo 'docker container is created'
                 echo 'docker container is running'
